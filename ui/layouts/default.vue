@@ -33,6 +33,12 @@
           rounded="lg"
         ></v-list-item>
         <v-list-item
+          prepend-icon="mdi-account-group"
+          title="Usuarios"
+          to="/users"
+          rounded="lg"
+        ></v-list-item>
+        <v-list-item
           prepend-icon="mdi-cog"
           title="Ajustes"
           to="/setup"
