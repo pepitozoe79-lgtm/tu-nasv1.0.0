@@ -1,0 +1,46 @@
+version: '3.9'
+services:
+  manager:
+    build: ./manager
+    container_name: tu-nas-manager
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - manager_data:/data
+    restart: unless-stopped
+    mem_limit: 512m
+    cpus: 2
+    networks:
+      - control
+      - apps
+
+  proxy:
+    build: ./proxy
+    container_name: tu-nas-proxy
+    volumes:
+      - /opt/tu-nas/proxy/conf.d:/etc/nginx/conf.d
+    restart: unless-stopped
+    networks:
+      - apps
+
+  agent:
+    build: ./agent
+    container_name: tu-nas-agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - MANAGER_URL=http://manager:80
+      - NODE_TOKEN=tu-token-secreto
+    restart: unless-stopped
+    networks:
+      - control
+
+networks:
+  control:
+    internal: true
+  apps:
+    driver: bridge
+
+volumes:
+  manager_data:
