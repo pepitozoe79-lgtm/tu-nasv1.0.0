@@ -3,24 +3,37 @@ services:
   manager:
     build: ./manager
     container_name: tu-nas-manager
-    ports:
-      - "80:80"
+    # Eliminamos el mapeo de puerto 80 del host para que lo use el proxy
+    expose:
+      - "80"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - manager_data:/data
     restart: unless-stopped
-    mem_limit: 512m
-    cpus: 2
     networks:
       - control
+      - apps
+
+  ui:
+    build: ./ui
+    container_name: tu-nas-ui
+    expose:
+      - "3000"
+    restart: unless-stopped
+    networks:
       - apps
 
   proxy:
     build: ./proxy
     container_name: tu-nas-proxy
+    ports:
+      - "80:80"
     volumes:
       - /opt/tu-nas/proxy/conf.d:/etc/nginx/conf.d
     restart: unless-stopped
+    depends_on:
+      - manager
+      - ui
     networks:
       - apps
 
