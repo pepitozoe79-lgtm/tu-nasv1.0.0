@@ -9,7 +9,7 @@ fi
 
 sudo mkdir -p /opt/tu-nas
 
-curl -fsSL https://raw.githubusercontent.com/tuusuario/tu-nas/main/docker-compose.yml -o /opt/tu-nas/docker-compose.yml
+curl -fsSL https://raw.githubusercontent.com/pepitozoe79-lgtm/tu-nasv1.0.0/main/docker-compose.yml -o /opt/tu-nas/docker-compose.yml
 
 cd /opt/tu-nas
 docker compose up -d

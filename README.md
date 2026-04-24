@@ -5,7 +5,7 @@
 Instálala con un solo comando:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tuusuario/tu-nas/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/pepitozoe79-lgtm/tu-nasv1.0.0/main/scripts/install.sh | bash
 ```
 
 Abre `http://localhost` y tendrás un panel donde desplegar apps con un clic, ver el estado de tus nodos, y olvidarte de configuraciones manuales.
