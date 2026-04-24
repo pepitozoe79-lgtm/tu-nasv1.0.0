@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <!-- Gradiente de fondo -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#111c3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1528;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente de acento principal -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d2ff;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradiente de texto -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d2ff;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Sombra -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#6c5ce7" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1280" height="640" fill="url(#bgGrad)" />
+
+  <!-- Patrón de malla sutil (efecto high-tech) -->
+  <g opacity="0.05">
+    <line x1="0" y1="80" x2="1280" y2="80" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="160" x2="1280" y2="160" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="240" x2="1280" y2="240" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="320" x2="1280" y2="320" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="1280" y2="400" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="480" x2="1280" y2="480" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="560" x2="1280" y2="560" stroke="#fff" stroke-width="0.5"/>
+    <line x1="160" y1="0" x2="160" y2="640" stroke="#fff" stroke-width="0.5"/>
+    <line x1="320" y1="0" x2="320" y2="640" stroke="#fff" stroke-width="0.5"/>
+    <line x1="480" y1="0" x2="480" y2="640" stroke="#fff" stroke-width="0.5"/>
+    <line x1="640" y1="0" x2="640" y2="640" stroke="#fff" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="640" stroke="#fff" stroke-width="0.5"/>
+    <line x1="960" y1="0" x2="960" y2="640" stroke="#fff" stroke-width="0.5"/>
+    <line x1="1120" y1="0" x2="1120" y2="640" stroke="#fff" stroke-width="0.5"/>
+  </g>
+
+  <!-- Círculos decorativos estilo nube/datos -->
+  <circle cx="180" cy="240" r="120" fill="none" stroke="#6c5ce7" stroke-opacity="0.1" stroke-width="2"/>
+  <circle cx="180" cy="240" r="180" fill="none" stroke="#6c5ce7" stroke-opacity="0.05" stroke-width="2"/>
+  <circle cx="1100" cy="400" r="140" fill="none" stroke="#00d2ff" stroke-opacity="0.1" stroke-width="2"/>
+  <circle cx="1100" cy="400" r="200" fill="none" stroke="#00d2ff" stroke-opacity="0.05" stroke-width="2"/>
+
+  <!-- Icono central abstracto (servidores / nube) -->
+  <g transform="translate(180, 200)" fill="none" stroke="url(#accentGrad)" stroke-width="3" filter="url(#shadow)">
+    <!-- Servidor 1 -->
+    <rect x="0" y="0" width="60" height="20" rx="3" fill="#6c5ce7" fill-opacity="0.2"/>
+    <rect x="0" y="30" width="60" height="20" rx="3" fill="#6c5ce7" fill-opacity="0.15"/>
+    <rect x="0" y="60" width="60" height="20" rx="3" fill="#6c5ce7" fill-opacity="0.1"/>
+
+    <!-- Servidor 2 -->
+    <rect x="90" y="15" width="60" height="20" rx="3" fill="#00d2ff" fill-opacity="0.2"/>
+    <rect x="90" y="45" width="60" height="20" rx="3" fill="#00d2ff" fill-opacity="0.15"/>
+
+    <!-- Nube conectando -->
+    <path d="M 30 -20 Q 30 -70 70 -70 Q 110 -70 120 -30 Q 130 -10 110 0 L 40 0 Q 20 0 30 -20 Z" fill="#6c5ce7" fill-opacity="0.15" stroke-dasharray="4 2"/>
+    <path d="M 90 -20 Q 80 -90 130 -80 Q 150 -70 150 -40 Q 160 -10 140 0 L 100 0 Q 80 0 90 -20 Z" fill="#00d2ff" fill-opacity="0.15" stroke-dasharray="4 2"/>
+
+    <!-- Líneas de conexión -->
+    <line x1="30" y1="0" x2="100" y2="-30" stroke-dasharray="4 4"/>
+    <line x1="120" y1="0" x2="100" y2="-30" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Texto principal: TU-NAS -->
+  <g transform="translate(320, 250)">
+    <text x="0" y="0" font-family="'Courier New', monospace" font-size="96" font-weight="bold" fill="url(#textGrad)" filter="url(#shadow)">
+      TU-NAS
+    </text>
+  </g>
+
+  <!-- Slogan -->
+  <g transform="translate(320, 310)">
+    <text x="0" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#8a9bb5" font-weight="300" letter-spacing="2">
+      ORQUESTADOR SELF‑HOSTED
+    </text>
+    <text x="0" y="35" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#55667a" letter-spacing="1.5">
+      Despliega • Repara • Escala • Olvida
+    </text>
+  </g>
+
+  <!-- Barra de acento inferior -->
+  <rect x="320" y="370" width="200" height="4" rx="2" fill="url(#accentGrad)"/>
+
+  <!-- Características rápidas -->
+  <g transform="translate(320, 430)" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#7b8aa6">
+    <text x="0" y="0">🔄 Auto‑healing</text>
+    <text x="0" y="25">📊 Auto‑scaling</text>
+    <text x="0" y="50">🌐 Multi‑nodo</text>
+
+    <text x="220" y="0">🛒 Marketplace</text>
+    <text x="220" y="25">🔐 Zero‑trust</text>
+    <text x="220" y="50">🧪 Simulación</text>
+
+    <text x="440" y="0">💾 Backups</text>
+    <text x="440" y="25">🕰️ Auditoría</text>
+    <text x="440" y="50">🧠 Intención</text>
+  </g>
+
+  <!-- URL del proyecto -->
+  <g transform="translate(320, 540)">
+    <text x="0" y="0" font-family="'Courier New', monospace" font-size="16" fill="#6c5ce7" opacity="0.7">
+      github.com/pepitozoe79-lgtm/tu-nasv1.0.0
+    </text>
+  </g>
+
+  <!-- Línea de instalación (el "magic moment") -->
+  <g transform="translate(900, 240)">
+    <rect x="0" y="0" width="340" height="100" rx="10" fill="#0a0e1a" fill-opacity="0.8" stroke="#1e2c4a" stroke-width="2"/>
+    <text x="20" y="33" font-family="'Courier New', monospace" font-size="13" fill="#8a9bb5">
+      <tspan x="20" dy="0" fill="#6c5ce7">$</tspan> curl -fsSL get.tu‑nas.io | bash
+    </text>
+    <text x="20" y="58" font-family="'Courier New', monospace" font-size="13" fill="#55667a">
+      <tspan x="20" dy="0">→ Instalación en un solo comando</tspan>
+    </text>
+    <text x="20" y="80" font-family="'Courier New', monospace" font-size="13" fill="#55667a">
+      <tspan x="20" dy="0">→ Dashboard listo en segundos</tspan>
+    </text>
+  </g>
+
+  <!-- Versión -->
+  <g transform="translate(1150, 620)">
+    <text x="0" y="0" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2a3a5c" text-anchor="end">
+      v1.0.0
+    </text>
+  </g>
+</svg>

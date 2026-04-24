@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="banner.svg" alt="tu-nas Banner" width="100%" />
+</p>
+
 # tu-nas
 
 **Tu nube personal que se repara sola.**
