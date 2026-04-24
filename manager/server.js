@@ -8,11 +8,25 @@ const { addProxy } = require('./services/proxyService');
 const { handleHeartbeat } = require('./services/nodeManager');
 const { reconcile } = require('./services/reconciliationService');
 
+const { deployFromMarketplace } = require('./services/marketplaceService');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.get('/health', (_, res) => res.json({ ok: true }));
+
+app.post('/api/marketplace/install', async (req, res) => {
+  try {
+    const { slug } = req.body;
+    const appDef = await deployFromMarketplace(slug);
+    bus.emit('app.installed', appDef);
+    res.json({ ok: true, message: `${appDef.name} instalado correctamente` });
+  } catch(e) {
+    console.error(e);
+    res.status(500).json({ error: e.message });
+  }
+});
 
 app.post('/api/apps/install', async (req, res) => {
   try {
