@@ -1,49 +1,57 @@
-<p align="center">
-  <img src="banner.svg" alt="tu-nas Banner" width="100%" />
-</p>
+# 🌌 tu-nas: El Orquestador Cloud Self-Hosted
 
-# tu-nas
+![tu-nas Banner](./banner.svg)
 
-**Tu nube personal que se repara sola.**
+**tu-nas** es una plataforma de orquestación de próxima generación diseñada para convertir cualquier servidor Linux en una nube privada potente, estética y automatizada. Con un enfoque en la simplicidad "un clic" y una estética **Cyber-Cloud** premium.
 
-Instálala con un solo comando:
+---
+
+## 🚀 Novedades de la Versión v1.0.0
+
+### 🎨 Interfaz de Usuario "State-of-the-Art"
+- **Estética Glassmorphism**: Panel de control moderno construido con Nuxt 3 y Vuetify, utilizando efectos de cristal esmerilado y degradados vibrantes.
+- **Dashboard Dinámico**: Visualización en tiempo real del estado de tus nodos, contenedores activos y consumo de recursos.
+- **Experiencia Adaptativa**: Diseño totalmente responsivo que se ve increíble en cualquier dispositivo.
+
+### 🛍️ App Marketplace (Inspirado en CasaOS)
+- **Catálogo Expandido**: +17 aplicaciones listas para instalar con un solo clic.
+- **Categorías Inteligentes**: Media (Jellyfin, Plex, Emby), Cloud (Nextcloud, Transmission), Red (AdGuard, Pi-hole) y Herramientas (Portainer, Uptime Kuma).
+- **Auto-Proxy**: Configuración automática de dominios locales (ej: `jellyfin.tu-nas.local`) para cada aplicación instalada.
+
+### 🔐 Gestión de Seguridad y Usuarios
+- **Nuevo Gestor de Usuarios**: Sección dedicada para añadir, editar y eliminar accesos al sistema.
+- **Roles Definidos**: Soporte para administradores y usuarios estándar.
+- **Autenticación Centralizada**: Acceso protegido mediante login oficial (`admin` / `tu-nas-2024`).
+
+### 🛠️ Arquitectura y Despliegue
+- **Instalador de una línea**: Despliegue completo en cualquier Linux mediante un script Bash automatizado.
+- **Multi-Contenedor**: Arquitectura robusta basada en Docker (Manager, Agent, UI, Nginx Proxy).
+- **Auto-Healing**: Sistema diseñado para monitorizar y recuperar servicios automáticamente.
+
+---
+
+## 🛠️ Instalación Rápida (Linux)
+
+Para desplegar **tu-nas** en tu servidor, simplemente ejecuta:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/pepitozoe79-lgtm/tu-nasv1.0.0/main/scripts/install.sh | bash
+curl -fsSL "https://raw.githubusercontent.com/pepitozoe79-lgtm/tu-nasv1.0.0/main/scripts/install.sh" | sudo bash
 ```
 
-Abre `http://localhost` y tendrás un panel donde desplegar apps con un clic, ver el estado de tus nodos, y olvidarte de configuraciones manuales.
+---
 
-## ✨ Características principales
+## 🏗️ Estructura del Proyecto
 
-- **Instalación en una línea**.
-- **Auto‑healing**: los contenedores caídos se reinician automáticamente.
-- **Multi‑nodo**: añade más máquinas y el sistema redistribuye la carga.
-- **Marketplace**: Jellyfin, Home Assistant, Nextcloud y más.
-- **Docker Compose nativo**: tus apps se gestionan con Compose, sin magia.
-- **Event‑Sourcing**: cada cambio queda registrado y puedes reconstruir el estado.
+- `/ui`: Interfaz Nuxt 3 con diseño premium.
+- `/manager`: Backend central en Node.js para la gestión de la infraestructura.
+- `/agent`: Agente ligero para monitoreo de nodos remotos.
+- `/proxy`: Sistema de enrutamiento dinámico basado en Nginx.
 
-## 🧱 Arquitectura
+---
 
-```
-[ tu PC / NAS / VPS ] → docker compose up
-        ↓
-[ Manager ] ←→ [ Agentes en otros nodos ]
-        ↓
-[ Apps (Docker Compose) ]
-        ↓
-[ Proxy Nginx dinámico ]
-```
+## 🤝 Créditos y Mentores
+Proyecto desarrollado con el objetivo de democratizar la gestión de servidores domésticos.
+**Inspiración**: CasaOS / CloudPanel.
 
-## 📦 Requisitos
-
-- Linux con Docker y Docker Compose.
-- (Opcional) Node.js 20 si quieres ejecutar el manager fuera de contenedores.
-
-## 🤝 Contribuir
-
-Lee [CONTRIBUTING.md] y abre un issue para discutir cambios. ¡Toda ayuda es bienvenida!
-
-## 📜 Licencia
-
-MIT
+---
+*Desarrollado con ❤️ para la comunidad Self-Hosted.*
