@@ -48,6 +48,7 @@
             variant="tonal"
             prepend-icon="mdi-logout"
             rounded="lg"
+            @click="handleLogout"
           >
             Salir
           </v-btn>
@@ -70,6 +71,11 @@
 
 <script setup>
 const drawer = ref(true)
+
+const handleLogout = () => {
+  // Redirigir al login
+  navigateTo('/login')
+}
 </script>
 
 <style>
